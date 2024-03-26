@@ -18,4 +18,20 @@ public class Wizard extends Fighter{
         }
         return vulnerable;
     }
+    @Override
+    int getDamagePoints(Fighter fighter) {
+        if(fighter.getClass()==Warrior.class){
+            if(preparingSpell){
+                return 12;
+            }else{
+                return 10;
+            }
+        }else{
+            if(preparingSpell){
+                return 12;
+            }else{
+                return 3;
+            }
+        }
+    }
 }
