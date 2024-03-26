@@ -11,10 +11,15 @@ public class Warrior extends Fighter{
 
     @Override
     int getDamagePoints(Fighter fighter) {
+        boolean vulnerable = fighter.isVulnerable();
         if(fighter.getClass()==Wizard.class){
             return 10;
         }else{
-            return 13;
+            if(vulnerable){
+                return 10;
+            }else{
+                return 6;
+            }
         }
     }
 }
